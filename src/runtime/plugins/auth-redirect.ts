@@ -1,5 +1,5 @@
 import { useSupabaseUser } from '../composables/useSupabaseUser'
-import { defineNuxtPlugin, addRouteMiddleware, defineNuxtRouteMiddleware, useRuntimeConfig, navigateTo, useSupabaseModuleOptions } from '#imports'
+import { defineNuxtPlugin, addRouteMiddleware, defineNuxtRouteMiddleware, useRuntimeConfig, navigateTo, serverSupabaseModuleOptions } from '#imports'
 
 export default defineNuxtPlugin({
   name: 'auth-redirect',
@@ -7,8 +7,7 @@ export default defineNuxtPlugin({
     addRouteMiddleware(
       'global-auth',
       defineNuxtRouteMiddleware(to => {
-        const config = useSupabaseModuleOptions(useRuntimeConfig())
-        // const config = useRuntimeConfig().public.supabase
+        const config = useRuntimeConfig().public.supabase
         const { login, callback, exclude } = config.redirectOptions
 
         // Do not redirect on login route, callback route and excluded routes
