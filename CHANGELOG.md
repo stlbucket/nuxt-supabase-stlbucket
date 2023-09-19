@@ -1,5 +1,7 @@
 
 
+## 1.1.17-0 (2023-09-19)
+
 # [1.1.0](https://github.com/nuxt-community/supabase-module/compare/v1.0.2...v1.1.0) (2023-09-06)
 
 
