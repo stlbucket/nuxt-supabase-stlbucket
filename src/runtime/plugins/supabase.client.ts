@@ -1,6 +1,7 @@
 import { defineNuxtPlugin, useRuntimeConfig, useCookie } from '#imports'
 import { createClient } from '@supabase/supabase-js'
 import { useSupabaseUser } from '../composables/useSupabaseUser'
+import { useSupabaseModuleOptions } from '../composables/useSupabaseModuleOptions'
 
 export default defineNuxtPlugin({
   name: 'supabase',
