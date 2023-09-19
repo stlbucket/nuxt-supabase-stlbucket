@@ -23,7 +23,7 @@ const signOut = async () => {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 400px;
         gap: 20px;
       "
     >
@@ -32,5 +32,13 @@ const signOut = async () => {
       <NuxtLink to="/">Go to home page</NuxtLink>
     </div>
     <div v-else>No User - Should not occur due to auth redirect</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 5;">
+    <div style="display: flex;">
+      <SupabaseModuleOptions />
+    </div>
+    <div style="display: flex;">
+      <RuntimeConfigOptions />
+    </div>
   </div>
 </template>

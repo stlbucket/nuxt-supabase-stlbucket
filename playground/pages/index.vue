@@ -29,7 +29,6 @@ const signOut = async () => {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
       gap: 20px;
     "
   >
@@ -40,5 +39,13 @@ const signOut = async () => {
     <pre>{{ api }}</pre>
     <NuxtLink to="/user">Go to user page</NuxtLink>
     <button @click="signOut">Sign Out</button>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 5;">
+    <div style="display: flex;">
+      <SupabaseModuleOptions />
+    </div>
+    <div style="display: flex;">
+      <RuntimeConfigOptions />
+    </div>
   </div>
 </template>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
+const invited = ref(false)
 
 watchEffect(() => {
   // Can be uncommented in next nuxt version when https://github.com/nuxt/nuxt/issues/21841 is fixed
@@ -28,6 +29,7 @@ const signIn = async () => {
     },
   })
   if (error) console.log(error)
+  else invited.value = true
 }
 
 const signOut = async () => {
@@ -44,7 +46,7 @@ const email = ref('')
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+        /* height: 100vh; */
       gap: 20px;
     "
   >
@@ -69,5 +71,14 @@ const email = ref('')
         Sign Out
       </button>
     </template>
+    <a href="http://localhost:54324" v-if="invited">Go to InBucket</a>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 5;">
+    <div style="display: flex;">
+      <SupabaseModuleOptions />
+    </div>
+    <div style="display: flex;">
+      <RuntimeConfigOptions />
+    </div>
   </div>
 </template>

@@ -6,7 +6,6 @@ export const useSupabaseModuleOptions = (runtimeConfig: RuntimeConfig): ModuleOp
       SUPABASE_URL: url, 
       SUPABASE_KEY: key
     },
-    SUPABASE_SERVICE_KEY: serviceKey,
   } = runtimeConfig
 
   // this check was moved from module.ts - they may not really be necessary
@@ -23,6 +22,5 @@ export const useSupabaseModuleOptions = (runtimeConfig: RuntimeConfig): ModuleOp
     ...runtimeConfig.public.supabase,
     url: url,
     key: key,
-    serviceKey: serviceKey
   }
 }
