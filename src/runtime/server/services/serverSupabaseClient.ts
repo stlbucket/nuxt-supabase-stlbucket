@@ -11,12 +11,7 @@ export const serverSupabaseClient = async <T>(event: H3Event): Promise<SupabaseC
   //   supabase: { url, key, cookieName },
   // } = useRuntimeConfig().public
 
-  console.log('WTF', useRuntimeConfig())
-  console.log('Seriously, WTF', useSupabaseModuleOptions(useRuntimeConfig()))
-  const {
-      supabase: { url, key, cookieName },
-    } = useSupabaseModuleOptions(useRuntimeConfig())
-
+  const { url, key, cookieName } = useSupabaseModuleOptions(useRuntimeConfig())
 
   let supabaseClient = event.context._supabaseClient as SupabaseClient<T>
 
