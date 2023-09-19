@@ -1,6 +1,5 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 import type { H3Event } from 'h3'
-import { useRuntimeConfig } from '#imports'
 import { serverSupabaseModuleOptions } from './serverSupabaseModuleOptions'
 
 export const serverSupabaseServiceRole = <T>(event: H3Event): SupabaseClient<T> => {
@@ -12,7 +11,7 @@ export const serverSupabaseServiceRole = <T>(event: H3Event): SupabaseClient<T> 
   //   },
   // } = useRuntimeConfig()
 
-  const { url, serviceKey } = serverSupabaseModuleOptions(event)
+  const { url, serviceKey } = serverSupabaseModuleOptions()
 
   // Make sure service key is set
   if (!serviceKey) {

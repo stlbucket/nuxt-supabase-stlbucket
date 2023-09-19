@@ -40,45 +40,50 @@ const signOut = async () => {
 const email = ref('')
 </script>
 <template>
-  <div
-    style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-        /* height: 100vh; */
-      gap: 20px;
-    "
-  >
-    <h1>Login</h1>
-    <button @click="signInWithOAuth">
-      Sign In with OAuth (GitHub)
-    </button>
-    <button @click="signIn">
-      Sign In with E-Mail
-    </button>
-    <input
-      v-model="email"
-      type="email"
-    />
-    <template v-if="user">
-      <NuxtLink to="/">
-        Go to home page
-      </NuxtLink>
-      <button
-        @click="signOut"
-      >
-        Sign Out
+  <div style="display: flex; flex-direction: column;">
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+          /* height: 100vh; */
+        gap: 20px;
+      "
+    >
+      <h1>Login</h1>
+      <button @click="signInWithOAuth">
+        Sign In with OAuth (GitHub)
       </button>
-    </template>
-    <a href="http://localhost:54324" v-if="invited">Go to InBucket</a>
-  </div>
-  <div style="display: flex; flex-direction: column; gap: 5;">
-    <div style="display: flex;">
-      <SupabaseModuleOptions />
+      <button @click="signIn">
+        Sign In with E-Mail
+      </button>
+      <input
+        v-model="email"
+        type="email"
+      />
+      <template v-if="user">
+        <NuxtLink to="/">
+          Go to home page
+        </NuxtLink>
+        <button
+          @click="signOut"
+        >
+          Sign Out
+        </button>
+      </template>
+      <a 
+        v-if="invited"
+        href="http://localhost:54324"
+      >Go to InBucket</a>
     </div>
-    <div style="display: flex;">
-      <RuntimeConfigOptions />
+    <div style="display: flex; flex-direction: column; gap: 5;">
+      <div style="display: flex;">
+        <SupabaseModuleOptions />
+      </div>
+      <div style="display: flex;">
+        <RuntimeConfigOptions />
+      </div>
     </div>
   </div>
 </template>

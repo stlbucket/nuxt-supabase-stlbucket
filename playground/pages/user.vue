@@ -15,30 +15,32 @@ const signOut = async () => {
 }
 </script>
 <template>
-  <div>
-    <div
-      v-if="user"
-      style="
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 400px;
-        gap: 20px;
-      "
-    >
-      {{ user.user_metadata.name || user.user_metadata.user_name || user.email }}
-      <button @click="signOut">Sign Out</button>
-      <NuxtLink to="/">Go to home page</NuxtLink>
+  <div style="display: flex; flex-direction: column;">
+    <div>
+      <div
+        v-if="user"
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 400px;
+          gap: 20px;
+        "
+      >
+        {{ user.user_metadata.name || user.user_metadata.user_name || user.email }}
+        <button @click="signOut">Sign Out</button>
+        <NuxtLink to="/">Go to home page</NuxtLink>
+      </div>
+      <div v-else>No User - Should not occur due to auth redirect</div>
     </div>
-    <div v-else>No User - Should not occur due to auth redirect</div>
-  </div>
-  <div style="display: flex; flex-direction: column; gap: 5;">
-    <div style="display: flex;">
-      <SupabaseModuleOptions />
-    </div>
-    <div style="display: flex;">
-      <RuntimeConfigOptions />
+    <div style="display: flex; flex-direction: column; gap: 5;">
+      <div style="display: flex;">
+        <SupabaseModuleOptions />
+      </div>
+      <div style="display: flex;">
+        <RuntimeConfigOptions />
+      </div>
     </div>
   </div>
 </template>

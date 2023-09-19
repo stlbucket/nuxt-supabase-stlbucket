@@ -23,29 +23,31 @@ const signOut = async () => {
 }
 </script>
 <template>
-  <div
-    style="
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-    "
-  >
-    <h1>Home</h1>
-    <div>Data fetched with useSupabaseClient composable</div>
-    <pre>{{ data }}</pre>
-    <div>Data fetched from server route API</div>
-    <pre>{{ api }}</pre>
-    <NuxtLink to="/user">Go to user page</NuxtLink>
-    <button @click="signOut">Sign Out</button>
-  </div>
-  <div style="display: flex; flex-direction: column; gap: 5;">
-    <div style="display: flex;">
-      <SupabaseModuleOptions />
+  <div style="display: flex; flex-direction: column;">
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      "
+    >
+      <h1>Home</h1>
+      <div>Data fetched with useSupabaseClient composable</div>
+      <pre>{{ data }}</pre>
+      <div>Data fetched from server route API</div>
+      <pre>{{ api }}</pre>
+      <NuxtLink to="/user">Go to user page</NuxtLink>
+      <button @click="signOut">Sign Out</button>
     </div>
-    <div style="display: flex;">
-      <RuntimeConfigOptions />
+    <div style="display: flex; flex-direction: column; gap: 5;">
+      <div style="display: flex;">
+        <SupabaseModuleOptions />
+      </div>
+      <div style="display: flex;">
+        <RuntimeConfigOptions />
+      </div>
     </div>
   </div>
 </template>
