@@ -1,0 +1,1 @@
+import{k as _,b as t,c as n,a2 as a}from"./entry.ddeac67e.js";const o={};function r(e,s){return t(),n("p",null,[a(e.$slots,"default",{},void 0,!0)])}const d=_(o,[["render",r],["__scopeId","data-v-35ae3da1"]]);export{d as default};
