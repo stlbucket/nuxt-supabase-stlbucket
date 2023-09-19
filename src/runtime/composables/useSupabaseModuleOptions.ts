@@ -1,4 +1,5 @@
-import { ModuleOptions, RuntimeConfig } from "@nuxt/schema"
+import { ModuleOptions } from "@nuxt/schema"
+import { useRuntimeConfig } from '#imports'
 
 export const useSupabaseModuleOptions = (): ModuleOptions => {
   const runtimeConfig = useRuntimeConfig()
