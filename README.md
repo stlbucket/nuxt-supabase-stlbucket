@@ -15,6 +15,14 @@
 - [▶ &nbsp;Video](https://www.youtube.com/watch?v=jIyiRT6zT8Q)
 - [👾 &nbsp;Demo](./demo)
 
+## DO NOT USE THIS REPOSITORY!  IT IS A COPY OF @NUXTJS/SUPABASE MEANT TO EXPLORE REWORK OF CONFIGURATION
+
+Summary of changes:
+- removed process.env.*** references
+- added useSupabaseModuleOptions composable
+- added serverSupabaseModuleOptions service
+- reworked supabase client instantiation to use new SupabaseModuleOptions
+- added runtime-config and supabase-module-options server api endpoints and display in playground UI
 ## Features
 
 - Nuxt 3 ready
