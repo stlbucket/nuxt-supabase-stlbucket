@@ -10,9 +10,8 @@ export default defineNuxtPlugin({
     // PREVIOUS CODE SHOULD BE DELETED
     // const { url, key, cookieName, clientOptions} = useRuntimeConfig().public.supabase
 
-    const { url, key, cookieName, clientOptions} = useSupabaseModuleOptions()
+    const { url, key, cookieName, clientOptions} = useSupabaseModuleOptions(useRuntimeConfig())
 
-    console.log(useRuntimeConfig())
     const accessToken = useCookie(`${cookieName}-access-token`).value
     const refreshToken = useCookie(`${cookieName}-refresh-token`).value
 

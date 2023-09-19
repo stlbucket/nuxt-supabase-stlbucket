@@ -1,8 +1,6 @@
-import { ModuleOptions } from "@nuxt/schema"
-import { useRuntimeConfig } from '#imports'
+import { ModuleOptions, RuntimeConfig } from "@nuxt/schema"
 
-export const useSupabaseModuleOptions = (): ModuleOptions => {
-  const runtimeConfig = useRuntimeConfig()
+export const useSupabaseModuleOptions = (runtimeConfig: RuntimeConfig): ModuleOptions => {
   const {
     public: {
       SUPABASE_URL: url, 

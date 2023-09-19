@@ -19,7 +19,7 @@ export const serverSupabaseServiceRole = <T>(event: H3Event): SupabaseClient<T> 
       }
     },
     supabase: { serviceKey },
-  } = useSupabaseModuleOptions()
+  } = useSupabaseModuleOptions(useRuntimeConfig())
 
   // Make sure service key is set
   if (!serviceKey) {

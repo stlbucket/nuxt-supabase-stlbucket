@@ -1,6 +1,7 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 import { getCookie } from 'h3'
 import type { H3Event } from 'h3'
+import { useRuntimeConfig } from '#imports'
 import { useSupabaseModuleOptions } from '../../composables/useSupabaseModuleOptions'
 
 export const serverSupabaseClient = async <T>(event: H3Event): Promise<SupabaseClient<T>> => {
@@ -12,7 +13,7 @@ export const serverSupabaseClient = async <T>(event: H3Event): Promise<SupabaseC
 
     const {
       supabase: { url, key, cookieName },
-    } = useSupabaseModuleOptions()
+    } = useSupabaseModuleOptions(useRuntimeConfig())
 
 
   let supabaseClient = event.context._supabaseClient as SupabaseClient<T>
